@@ -683,7 +683,7 @@ public class ClientWorker implements Closeable {
             executor.schedule(() -> {
                 while (!executor.isShutdown() && !executor.isTerminated()) {
                     try {
-                        listenExecutebell.poll(500L, TimeUnit.SECONDS);
+                        listenExecutebell.poll(5L, TimeUnit.SECONDS);
                         if (executor.isShutdown() || executor.isTerminated()) {
                             continue;
                         }
